@@ -1,0 +1,11 @@
+<%- include('layout', { title: title }) %>
+
+<div class="container">
+    <article class="post">
+        <h1><%= post.title %></h1>
+        <p class="date"><%= new Date(post.date).toLocaleDateString() %></p>
+        <div class="post-content">
+            <%- post.content %>
+        </div>
+    </article>
+</div> 

@@ -1,0 +1,22 @@
+<%- include('layout', { title: title }) %>
+
+<div class="container">
+    <section class="hero">
+        <h1>Welcome to Clinician to Creator</h1>
+        <p>Join me on my journey from healthcare professional to software developer</p>
+    </section>
+
+    <section class="featured-posts">
+        <h2>Latest Posts</h2>
+        <div class="posts-grid">
+            <% const posts = getBlogPosts(); %>
+            <% posts.slice(0, 3).forEach(post => { %>
+                <article class="post-card">
+                    <h3><a href="/post/<%= post.slug %>"><%= post.title %></a></h3>
+                    <p class="date"><%= new Date(post.date).toLocaleDateString() %></p>
+                    <a href="/post/<%= post.slug %>" class="read-more">Read More</a>
+                </article>
+            <% }); %>
+        </div>
+    </section>
+</div> 

@@ -1,0 +1,17 @@
+<%- include('layout', { title: title }) %>
+
+<div class="container">
+    <h1>Blog Posts</h1>
+    <div class="posts-list">
+        <% posts.forEach(post => { %>
+            <article class="post-item">
+                <h2><a href="/post/<%= post.slug %>"><%= post.title %></a></h2>
+                <p class="date"><%= new Date(post.date).toLocaleDateString() %></p>
+                <div class="post-excerpt">
+                    <%= post.content.substring(0, 200) %>...
+                </div>
+                <a href="/post/<%= post.slug %>" class="read-more">Read More</a>
+            </article>
+        <% }); %>
+    </div>
+</div> 
