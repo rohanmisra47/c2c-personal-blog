@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %> | Clinician to Creator</title>
+    <title><%= typeof title !== 'undefined' ? title + ' | ' : '' %>Clinician to Creator</title>
     <link rel="stylesheet" href="/css/style.css">
+    <%- typeof style !== 'undefined' ? style : '' %>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
+    <header>
+        <nav class="nav-container">
             <a href="/" class="logo">Clinician to Creator</a>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="/blog">Blog</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <main>
         <%- typeof body !== 'undefined' ? body : '' %>
@@ -24,5 +25,6 @@
     <footer>
         <p>&copy; <%= new Date().getFullYear() %> Clinician to Creator. All rights reserved.</p>
     </footer>
+    <%- typeof script !== 'undefined' ? script : '' %>
 </body>
 </html> 
